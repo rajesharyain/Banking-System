@@ -54,10 +54,10 @@ public class HiddenTest {
 
     @Test
     public void checkAuthorizedUserTest() {
-        assertTrue(bank.checkAuthorizedUser(commercialAccountNr1, new Person("John", "Doe", 1)));
-        assertTrue(bank.checkAuthorizedUser(commercialAccountNr1, person1));
-        assertTrue(bank.checkAuthorizedUser(commercialAccountNr1, person2));
-        assertTrue(bank.checkAuthorizedUser(commercialAccountNr2, person3));
+       assertTrue(bank.checkAuthorizedUser(commercialAccountNr1, new Person("John", "Doe", 1)));
+       assertTrue(bank.checkAuthorizedUser(commercialAccountNr1, person1));
+       assertTrue(bank.checkAuthorizedUser(commercialAccountNr1, person2));
+       assertTrue(bank.checkAuthorizedUser(commercialAccountNr2, person3));
     }
 
     @Test
@@ -68,7 +68,7 @@ public class HiddenTest {
         assertFalse(bank.checkAuthorizedUser(commercialAccountNr2, person1));
         assertFalse(bank.checkAuthorizedUser(consumerAccountNr1, person1));
         assertFalse(bank.checkAuthorizedUser(Long.MAX_VALUE, person1));
-        assertFalse(bank.checkAuthorizedUser(null, person1));
+assertFalse(bank.checkAuthorizedUser(null, person1));
     }
 
     @Test

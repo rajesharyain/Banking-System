@@ -2,6 +2,7 @@ package banking;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Account implementation for commercial (business) customers.
@@ -31,6 +32,8 @@ public class CommercialAccount extends Account{
      * @return <code>true</code> if person matches an authorized user in {@link #authorizedUsers}; <code>false</code> otherwise.
      */
     public boolean isAuthorizedUser(Person person) {
-        return authorizedUsers.contains(person);
+        Optional<Person> singlePerson = authorizedUsers.stream().filter(p -> p.equals(person)).findAny();
+        return singlePerson.isPresent();
+
     }
 }
